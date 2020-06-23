@@ -1,0 +1,6 @@
+Referências de estudo, sem citações no artigo:
+C. Gilarranz (1) , S. Altares (1) , M. Loizu (2) Intelligent Irrigation System Based on Arduino
+        https://arxiv.org/ftp/arxiv/papers/1803/1803.00097.pdf
+
+N Seenu, Manju Mohan, Jeevanath V S Android Based Intelligent Irrigation System
+       https://acadpubl.eu/jsi/2018-119-7/articles/7a/7.pdf
