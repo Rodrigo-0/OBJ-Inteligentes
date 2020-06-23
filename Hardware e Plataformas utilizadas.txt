@@ -1,0 +1,20 @@
+Hardware utilizado: 
+Arduino uno
+O Arduino Uno R3 é uma placa de microcontrolador baseado no ATmega328. Ele tem 14 pinos de entrada/saída digital, 6 entradas analógicas, um cristal oscilador de 16MHz, uma conexão USB, uma entrada de alimentação uma conexão ICSP e um botão de reset.
+
+Módulo sensor de umidade do solo
+As especificações são: Tensão de operação: 3,3-5V, sensibilidade ajustável via potenciômetro, leds indicadores. Dimensões PCB:3X1,5cm, dimensões Sonda: 6x2 cm. Pinagem: VCC, GND, D0: Saída digital, A0: Saída analógica. 
+
+Válvula solenoide
+Ela funciona baseada em uma bobina (solenoide), que ao ser energizada gera um impulso eletromagnético que será o responsável por movimentar o êmbolo da válvula. Tensão de operação: 12V DC, termoplástico, aço zincado, borracha, abertura de entradas: ¾ polegada, saída: ¾ polegada.
+
+Módulo relé
+O módulo relé de 1 canal, irá servir para o controle da válvula solenoide, tensão de operação: 5VDC, corrente típica: 10~15mA, led indicador de status, pinagem: normal aberto, normal fechado e comum, tensão de saída: 30VDC a 10A	 ou250AC a 10A, furos de 3mm para fixação nas extremidades, ativo baixo acionado com GND.
+
+Jumpers
+(Macho - Fêmea, Macho – Macho ou Fêmea – Fêmea)
+
+Fonte
+fonte 12v bivolt
+
+Plataformas de desenvolvimento: Arduino (app padrão original), Blynk App (para a comunicação remota, app mobile)
