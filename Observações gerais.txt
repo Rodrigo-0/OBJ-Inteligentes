@@ -1,0 +1,5 @@
+Observações gerais: 
+- A comunicação foi feita via o blynk, aplicativo mobile que traz diversas formulas de comunicação via cloud do mesmo serviço. O código utilizado para formalizar o seu uso está no OBJ-Inteligentes.ino
+- Os protocolos utilizados para a comunicação foi o HTTPS, por conta da comunicação via internet/cloud provida pelo Blynk.
+- Toda pesquisa foi feita com base em alguns sites e videos que nos auxilia a ter o conhecimento para realização do projeto.
+- A interface foi utilizando a protoboard e o Arduino UNO com suas conexões e sensores.  
