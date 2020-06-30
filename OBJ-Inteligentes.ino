@@ -1,36 +1,48 @@
 // Biblioteca do Blynk (controle remoto do rele)
 #define BLYNK_PRINT DebugSerial
-
-//definições do hardware
-#define    rele    13       //sinal de saída para o módulo relé
-#define    sens     8       //entrada para leitura do sensor
-
 // Parametros para auxiliar o blynk a funcionar normalmente
 #include <SoftwareSerial.h>
 SoftwareSerial DebugSerial(2, 3); // RX, TX
 #include <BlynkSimpleStream.h>
 char auth[] = "ABX2VT3uAuqcYxGYMLmjNS-sgaYWjGVY";
 
-// Codigo para todo o funcionamento
-void setup()
-{
+//definições do hardware
+#define    rele    13       //sinal de saída para o módulo relé
+#define    sens     8       //entrada para leitura do sensor
+
+//Cria duas variaveis para realizar a leitura do Sensor
+bool leituraSensor;
+bool leituraAnterior;
+
+void setup() {
   // Debug console
   DebugSerial.begin(9600);
   Serial.begin(9600);
   Blynk.begin(Serial, auth);
 
+  //Definição das portas para identificação no Arduino
+  //Sensor
+  pinMode(sens, INPUT);
 
-  pinMode(rele, OUTPUT);   // configura saída: sinal do relé
-  pinMode(sens,  INPUT);   // configura entrada: sensor
+  //Atuador
+  pinMode(rele, OUTPUT);
+  
+}
 
-  digitalWrite(rele, LOW); // estado inicial do rele
-} // fim do system startup
+void loop() {
+  //Funcionamento em rotina
+  
+  leituraSensor = digitalRead(sens); //Variavel que guarda a informação vinda do sensor
+  
+  //Quando o sensor identificar o solo seco, realiza-se a comparação no if
+  if (leituraSensor && !leituraAnterior) {
+     while (digitalRead(sens)) { //condição que liga o rele/solenoide em caso de solo seco
+        digitalWrite(rele, HIGH);   // Liga o rele, que posteriormente liga a solenoide
+        delay(60000);
+        digitalWrite(rele, LOW);   //  Desliga o rele, que posteriormente desliga a solenoide
 
-void loop()
-{
-  Blynk.run();
-  pinMode(rele, OUTPUT);   // configura saída: sinal do relé
-  pinMode(sens,  INPUT);   // configura entrada: sensor
-
-  digitalWrite(rele, LOW); //rele inicia desligado
-} //fim do loop
+        delay(10000);
+     }
+  }
+  leituraAnterior = leituraSensor;
+}
